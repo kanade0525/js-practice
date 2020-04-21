@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Split Bill Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-area">
+        <div class="title">SPLIBILLOR</div>
+        <p>WARIKAN-SYSTEM</p>
+      </div>
+      <div class="input-area">
+        <div>
+          <i class="fas fa-yen-sign"></i><input type="text" id="price" placeholder="PRICE" type="number" class="icon">
+        </div>
+        <div>
+          <i class="fas fa-male"></i><input type="text" id="num" placeholder="NUMBER" type="number" class="icon">
+        </div>
+        <div>
+          <i class="fas fa-sort-amount-up"></i><select id="unit" name="select unit">
+            <option value="10">¥ 10 UNIT</option>
+            <option value="100" selected>¥ 100 UNIT</option>
+            <option value="1000">¥ 1000 UNIT</option>
+          </select>
+        </div>
+        <div>
+          <i class="fas fa-check-circle"></i><input type="submit" value="CALCULATE" id="btn" class="disabled">
+        </div>
+      </div>
+      <div class="result-area">
+        <div id="result">RESULT...</div>
+        <div id="reset" class="hidden"><i class="fas fa-redo fa-spin"></i>REDO</div>
+      </div>
+      <footer>ⓒKanade Ishida 2020</footer>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
