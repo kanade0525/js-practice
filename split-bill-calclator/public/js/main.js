@@ -14,14 +14,18 @@
       // この正規表現にマッチしない場合は全てnullを返す処理
       // 一桁目に1~9のどれか、それ以降に0~9と言う数値が繰り返されるかどうか先頭から末尾まで調べる
       price.value.match(/^[1-9][0-9]*$/) !== null &&
-      num.value.match(/^[1-9][0-9]*$/) !== null) {
+      num.value.match(/^[1-9][0-9]*$/) !== null &&
+      unit.value.match(/^[1-9][0-9]*$/) !== null
+    ) {
       btn.classList.remove('disabled');
       disabledIcon.classList.remove('disabled-icon');
       btn.classList.add('active');
+      unit.classList.remove('disabled');
     } else {
       btn.classList.add('disabled');
       disabledIcon.classList.add('disabled-icon');
       btn.classList.remove('active');
+      unit.classList.add('disabled');
     }
   }
   btn.addEventListener('click', () => {
@@ -56,7 +60,7 @@
       result.textContent = 'RESULT...'
       price.value = '';
       num.value = '';
-      unit.value = 100;
+      unit.value = '';
       btn.classList.add('disabled');
       disabledIcon.classList.add('disabled-icon')
       reset.classList.add('hidden');
@@ -68,5 +72,6 @@
   // ユーザーが値を入力したかどうかの判定はkeyup
   price.addEventListener('keyup', checkInput);
   num.addEventListener('keyup', checkInput);
+  unit.addEventListener('change', checkInput);
 
 })();
