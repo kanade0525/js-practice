@@ -49,6 +49,7 @@ i{
   100%{
     width: 90%;
     margin: 0 auto;
+    text-shadow:0 0 10px #31A390;
     border-bottom: 2px solid #58D2CB;
   }
 }

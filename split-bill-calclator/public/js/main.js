@@ -8,7 +8,6 @@
   let result = document.getElementById('result');
   let reset = document.getElementById('reset');
   let disabledIcon = document.getElementById('disabledIcon');
-  price.focus();
 
   function checkInput() {
     if (
