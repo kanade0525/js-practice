@@ -6,6 +6,7 @@
   text-align: center;
   color: #58D2CB;
 }
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -60,6 +61,13 @@ i{
 #num::placeholder{
   text-align: left;
 }
+#btn{
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  box-sizing: border-box;
+  cursor: pointer;
+}
 select{
   margin: 0 auto;
   padding-left: 15px;
@@ -72,7 +80,7 @@ select{
   color: gray;
 }
 .active{
-  transition:  0.5s;
+  transition: 0.5s;
   transition-duration: 0.5s;
   text-shadow:0 0 10px #31A390;
   box-shadow: 0 0 8px #31A390;
@@ -84,12 +92,12 @@ select{
   background-color: #292929;
   border-radius: 20px;
   padding: 10px 20px;
-  height: 30%;
+  height: 25%;
   position: relative;
 }
 #result{
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
 }
 #reset{
   border: 2px solid #58D2CB;
