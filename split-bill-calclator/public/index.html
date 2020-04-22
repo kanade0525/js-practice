@@ -16,10 +16,10 @@
       </div>
       <div class="input-area">
         <div>
-          <i class="fas fa-yen-sign"></i><input type="text" id="price" placeholder="PRICE" type="number" class="icon">
+          <i class="fas fa-yen-sign"></i><input type="number" id="price" placeholder="PRICE" class="icon">
         </div>
         <div>
-          <i class="fas fa-male"></i><input type="text" id="num" placeholder="NUMBER" type="number" class="icon">
+          <i class="fas fa-male"></i><input type="number" id="num" placeholder="NUMBER" class="icon">
         </div>
         <div>
           <i class="fas fa-sort-amount-up"></i><select id="unit" name="select unit">
@@ -29,12 +29,12 @@
           </select>
         </div>
         <div>
-          <i class="fas fa-check-circle"></i><input type="submit" value="CALCULATE" id="btn" class="disabled">
+          <i class="fas fa-check-circle disabled-icon" id="disabledIcon"></i><input type="submit" value="CALCULATE" id="btn" class="disabled">
         </div>
       </div>
       <div class="result-area">
         <div id="result">RESULT...</div>
-        <div id="reset" class="hidden"><i class="fas fa-redo fa-spin"></i>REDO</div>
+        <div id="reset" class="hidden"><i class="fas fa-redo" style="margin-right: 10px;"></i>RESET</div>
       </div>
       <footer>ⓒKanade Ishida 2020</footer>
     </div>
