@@ -61,6 +61,7 @@
       btn.classList.add('disabled');
       disabledIcon.classList.add('disabled-icon')
       reset.classList.add('hidden');
+      btn.classList.remove('active');
       // 最初にpriceに入力可能にしておく
       price.focus();
     })
