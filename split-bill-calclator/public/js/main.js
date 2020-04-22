@@ -7,6 +7,7 @@
   let btn = document.getElementById('btn');
   let result = document.getElementById('result');
   let reset = document.getElementById('reset');
+  let disabledIcon = document.getElementById('disabledIcon');
   price.focus();
 
   function checkInput() {
@@ -16,9 +17,12 @@
       price.value.match(/^[1-9][0-9]*$/) !== null &&
       num.value.match(/^[1-9][0-9]*$/) !== null) {
       btn.classList.remove('disabled');
+      disabledIcon.classList.remove('disabled-icon');
       btn.classList.add('active');
     } else {
       btn.classList.add('disabled');
+      disabledIcon.classList.add('disabled-icon');
+      btn.classList.remove('active');
     }
   }
   btn.addEventListener('click', () => {
@@ -42,18 +46,20 @@
     } else {
       str =
         // '一人' + payLess + '円だと' + short + '円たりません。' +
-        '1人' + payMore + '円 余り：' + over + '円お酒飲んでない人、あんまり食べてない人にあげちゃいましょう。';
+        `1人${payMore}円：お釣り${over}円
+      お酒飲んでない人、あんまり食べてない人にあげちゃいましょう。`;
     }
 
     result.textContent = str;
     reset.classList.remove('hidden');
 
     reset.addEventListener('click', function() {
-      result.textContent = 'RESULT'
+      result.textContent = 'RESULT...'
       price.value = '';
-      num.value = '100';
-      unit.value = 0;
+      num.value = '';
+      unit.value = 100;
       btn.classList.add('disabled');
+      disabledIcon.classList.add('disabled-icon')
       reset.classList.add('hidden');
       // 最初にpriceに入力可能にしておく
       price.focus();
