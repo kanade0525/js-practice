@@ -14,8 +14,10 @@
       date.value.match(/[1-9]/) !== null
     ) {
       btn.classList.remove('disabled');
+      btn.classList.add('active');
     } else {
       btn.classList.add('disabled');
+      btn.classList.remove('active');
     }
   }
 
