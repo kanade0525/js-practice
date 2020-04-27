@@ -1,4 +1,3 @@
-let moment = require("moment");
 (() => {
   'use strict';
 
@@ -8,6 +7,17 @@ let moment = require("moment");
   const btn = document.getElementById('btn');
   const p = document.querySelector('p');
 
+  function checkInput() {
+    if (
+      year.value.match(/[1-9]/) !== null &&
+      month.value.match(/[1-9]/) !== null &&
+      date.value.match(/[1-9]/) !== null
+    ) {
+      btn.classList.remove('disabled');
+    } else {
+      btn.classList.add('disabled');
+    }
+  }
 
   function getResult() {
 
@@ -27,8 +37,16 @@ let moment = require("moment");
   }
 
   btn.addEventListener('click', () => {
-    p.textContent = getResult();
+    if (btn.classList.contains('disabled') === true) {
+      return;
+    } else {
+      p.textContent = getResult();
+    }
   });
+
+  year.addEventListener('change', checkInput);
+  month.addEventListener('change', checkInput);
+  date.addEventListener('change', checkInput);
 })();
 
 //$ browserify js/main.js -o bundle.js
