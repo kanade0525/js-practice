@@ -6,6 +6,7 @@
   const date = document.getElementById('date');
   const btn = document.getElementById('btn');
   const p = document.querySelector('p');
+  const reset = document.getElementById('reset');
 
   function checkInput() {
     if (
@@ -43,8 +44,18 @@
       return;
     } else {
       p.textContent = getResult();
+      reset.classList.remove('hidden');
     }
   });
+
+  reset.addEventListener('click', () => {
+    year.value = '';
+    month.value = '';
+    date.value = '';
+    btn.classList.add('disabled');
+    reset.classList.add('hidden');
+    btn.classList.remove('active');
+  })
 
   year.addEventListener('change', checkInput);
   month.addEventListener('change', checkInput);
