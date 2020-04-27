@@ -3,7 +3,18 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Alegreya Sans SC', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -webkit-appearance: none !important;
 }
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 body{
   color: #424242;
   background: #EFEFEF;
