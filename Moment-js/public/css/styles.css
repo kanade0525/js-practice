@@ -79,6 +79,9 @@ body{
   margin: 64px auto;
   border: 10px solid #A02ED5;
 }
+.disabled{
+  opacity: 0.5;
+}
 .result-area{
   padding: 24px;
   height: 35%;
