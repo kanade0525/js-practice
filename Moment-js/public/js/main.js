@@ -52,6 +52,7 @@
     year.value = '';
     month.value = '';
     date.value = '';
+    p.textContent = '';
     btn.classList.add('disabled');
     reset.classList.add('hidden');
     btn.classList.remove('active');
