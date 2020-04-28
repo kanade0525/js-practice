@@ -77,6 +77,10 @@
   // ユーザーが値を入力したかどうかの判定はkeyup
   price.addEventListener('keyup', checkInput);
   num.addEventListener('keyup', checkInput);
+  num.addEventListener('keyup', () => {
+    unit.focus();
+  });
+
   unit.addEventListener('change', checkInput);
 
 })();
