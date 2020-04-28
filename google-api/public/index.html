@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>map</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <h1>map</h1>
+    <div id="target">
+
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyCOWfyDPRNglGur_K3NxBQLdVASHgoML7g&callback=initMap" async defer></script>
+    <script>
+    function initMap() {
+      'use strict';
+      let target = document.getElementById('target');
+      let map;
+      let tokyo = {
+        lat: 35.8405638,
+        lng: 139.7626531
+      };
+      map = new google.maps.Map(target, {
+        center: tokyo,
+        zoom: 16
+      });
+
+    };
+    </script>
+  </body>
+</html>
