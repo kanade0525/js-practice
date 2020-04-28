@@ -8,6 +8,7 @@
   let result = document.getElementById('result');
   let reset = document.getElementById('reset');
   let disabledIcon = document.getElementById('disabledIcon');
+  let descResult = document.getElementById('descResult');
 
   function checkInput() {
     if (
@@ -34,6 +35,7 @@
     let payMore;
     let over;
     let str;
+    let desc;
     if (btn.classList.contains('disabled') === true) {
       // 何も処理を走らせたくないとき
       return;
@@ -49,15 +51,18 @@
     } else {
       str =
         // '一人' + payLess + '円だと' + short + '円たりません。' +
-        `1人${payMore}円：お釣り${over}円
-      お酒飲んでない人、あんまり食べてない人にあげちゃいましょう。`;
+        `1人${payMore}円：お釣り${over}円`;
+
+      desc = `お酒飲んでない人、 あんまり食べてない人にあげちゃいましょう。`;
     }
 
     result.textContent = str;
+    descResult.textContent = desc;
     reset.classList.remove('hidden');
 
     reset.addEventListener('click', function() {
       result.textContent = 'RESULT...'
+      desc.textContent = '';
       price.value = '';
       num.value = '';
       unit.value = '';
