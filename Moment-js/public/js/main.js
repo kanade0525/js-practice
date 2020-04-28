@@ -22,8 +22,7 @@
     }
   }
 
-  function getResult() {
-
+  function getDays() {
     // if (!bday.isValid()) {
     //   return '日付が無効です！';
     // }
@@ -33,17 +32,45 @@
     const bday = year.value + month.value + date.value;
     const d = moment(bday, 'YYYYMMDD');
     let days = now.diff(d, 'day');
+    return `生まれてから${days}日です`
+  }
+
+  function getHours() {
+    const now = moment(new Date());
+    const bday = year.value + month.value + date.value;
+    const d = moment(bday, 'YYYYMMDD');
     let hours = now.diff(d, 'hour');
+    return `生まれてから${hours}時間です`;
+  }
+
+  function getMinutes() {
+    const now = moment(new Date());
+    const bday = year.value + month.value + date.value;
+    const d = moment(bday, 'YYYYMMDD');
     let minutes = now.diff(d, 'minute');
+    return `生まれてから${minutes}分です`;
+  }
+
+  function getSeconds() {
+    const now = moment(new Date());
+    const bday = year.value + month.value + date.value;
+    const d = moment(bday, 'YYYYMMDD');
     let seconds = now.diff(d, 'second');
-    return `生まれてから${days}日:時間でいうと${hours}時間:分でいうと${minutes}分:秒でいうと${seconds}秒です`;
+    return `生まれてから${seconds}秒です`;
   }
 
   btn.addEventListener('click', () => {
+    const daysResult = document.getElementById('daysResult');
+    const hoursResult = document.getElementById('hoursResult');
+    const minutesResult = document.getElementById('minutesResult');
+    const secondsResult = document.getElementById('secondsResult');
     if (btn.classList.contains('disabled') === true) {
       return;
     } else {
-      p.textContent = getResult();
+      daysResult.textContent = getDays();
+      hoursResult.textContent = getHours();
+      minutesResult.textContent = getMinutes();
+      secondsResult.textContent = getSeconds();
       reset.classList.remove('hidden');
     }
   });
